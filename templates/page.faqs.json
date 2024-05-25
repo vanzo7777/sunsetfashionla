@@ -1,0 +1,85 @@
+{
+  "wrapper": "div.faqs-page",
+  "sections": {
+    "main": {
+      "type": "faq-page",
+      "blocks": {
+        "632cbc4f-64ed-45f0-9346-a670cafeac33": {
+          "type": "text",
+          "settings": {
+            "question_faqs_1": "Why Didn't My Order Come Together In One Package?",
+            "answer_faqs_1": "We ship your orders from various international warehouses (US, Canada, China, and Singapore). Our inventory is distributed over multiple fulfillment centers around the world in order for you to receive the order faster. This means orders containing multiple items may be shipped individually. You may receive an item before the next. So don't panic if you don't receive all of your items at once as the others are on the way. If you do not receive all your purchases within 8 weeks, please contact us to look into your shipment.",
+            "question_faqs_2": "Do You Ship Internationally?",
+            "answer_faqs_2": "Yes, we FREE ship to most countries worldwide.",
+            "question_faqs_3": "How Long Will My Order Take To Be Delivered?",
+            "answer_faqs_3": "Please allow 2-5 business days for processing your order. After which, your order will be ready to ship out. It usually takes only 10-20 business days for shipping to the US and 15-40 business days for international shipping, depending on your location.",
+            "question_faqs_4": "How Do I Track My Package?",
+            "answer_faqs_4": "We will send you a tracking number when your order ships. \n\nTo track your order please go to: http:\/\/www.17track.net\/en and enter the tracking number provided to you.",
+            "question_faqs_5": "Why Can't I Track My Order On The Website?",
+            "answer_faqs_5": "Please note that the tracking information will be displayed after 5-10 days after being updated.\n\nTherefore, if you can't find tracking information about your package, please try in 1-3 days later."
+          }
+        },
+        "9d441b01-0837-42eb-8e7e-f3f1d56dead8": {
+          "type": "text",
+          "settings": {
+            "question_faqs_1": "Help! There's A Problem With My Shipment!",
+            "answer_faqs_1": "If there's an issue with your package, please <a href=\"https:\/\/sunsetfashionla.com\/pages\/contact-us\">contact<\/a> our Support Team. Please be sure to include your order and tracking numbers, a brief explanation of the problem, and any case or reference numbers you have started with the carrier.",
+            "question_faqs_2": "Why Is My Shipment Status Not Updating?",
+            "answer_faqs_2": "Your shipment may be delayed for many reasons. Common delays can be due to e.g. weather incidents, customs, or backlogs.",
+            "question_faqs_3": "Customs Charges",
+            "answer_faqs_3": "The value and shipping information is printed on a sticker on the outside of the package when your order is shipped. We will mark the package as a gift for our customers. BUT duties and taxes are calculated and charged by customs officials in your country. As such, they are beyond our control. As the importer of record, you are responsible for duties, taxes, and any other charges that your country chooses to impose for the import.",
+            "question_faqs_4": "How Much Will Customs Charges Be For My Country?",
+            "answer_faqs_4": "As charges are individually assessed by your country’s officials upon import, we are unable to provide an estimate on how much you may be charged for customs. Charges vary case by case. Instead, please try contacting the customs officials in your country to get a better idea of what the customs charges may be for your order.",
+            "question_faqs_5": "How Can I Pay For My Order?",
+            "answer_faqs_5": "Current payment methods for US orders are Visa, Mastercard, Amex, Discover, JCB, PayPal and Diners Club."
+          }
+        },
+        "a07c012a-89d5-4f23-a6ce-17c629365d52": {
+          "type": "text",
+          "settings": {
+            "question_faqs_1": "How Do I Order?",
+            "answer_faqs_1": "Browse through the products that you love, then click \"Add to cart\" and \"Check out\". Enter your shipping and billing details and wait for your order to arrive at your doorstep. It is that easy :)",
+            "question_faqs_2": "Oh No! I Need To Modify My Order!",
+            "answer_faqs_2": "Unfortunately, please note that we are only able to make changes to your order if it has not been fulfilled yet. If you want to change anything in your order, please contact us within 5 hours after placing your order. If the order has been shipped, we can no longer make modifications to your order.",
+            "question_faqs_3": "What Is Your Refund Policy?",
+            "answer_faqs_3": "SunsetFashionLA has a 30 days refund policy for all orders placed through the website. You can have a look at our return policy <a href=\"https:\/\/sunsetfashionla.com\/pages\/refund-policy\">here<\/a>",
+            "question_faqs_4": "What If I Received A Damaged Product?",
+            "answer_faqs_4": "We always try to source the best quality products for our customers. However, there are many factors that might have resulted in your products being damaged in transit.\n\nIf you received a defective\/damaged item, please kindly contact us by sending an email to support@sunsetfashionla.com , let us know your problem, and please don't forget to attach photos\/videos which can clearly show the issue.",
+            "question_faqs_5": "",
+            "answer_faqs_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "632cbc4f-64ed-45f0-9346-a670cafeac33",
+        "9d441b01-0837-42eb-8e7e-f3f1d56dead8",
+        "a07c012a-89d5-4f23-a6ce-17c629365d52"
+      ],
+      "settings": {
+        "des_faqs": "Below FAQ are some common concerns of our clients before purchasing the theme, if you have other questions, please just send it to <a href=\"mailto:support@sunsetfashionla.com\" target=\"_blank\">support@sunsetfashionla.com<\/a>",
+        "contact_text": "Unable to find satisfactory answers ?",
+        "contact_link_text": "Contact Support",
+        "contact_link": "",
+        "icon_faqs": "Question",
+        "bg_icon_qs": "#ef6454",
+        "color_icon_qs": "#ffffff",
+        "bg_question": "#fafafa",
+        "color_question": "#323232",
+        "font_size_qs": "16",
+        "bg_question_acitve": "#232323",
+        "color_question_acitve": "#ffffff",
+        "icon_answer": "Answer",
+        "bg_icon_answer": "#69c69c",
+        "color_icon_answer": "#ffffff",
+        "color_question_answer": "#3c3c3c",
+        "font_size_answer": "16",
+        "color_question_link": "#0688e2",
+        "icon_show": "Show",
+        "icon_hide": "Hide"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

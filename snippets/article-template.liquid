@@ -1,0 +1,385 @@
+{% comment %}
+  Comments will not appear right after they are submitted, either to be checked for spam
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that renders the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+
+  More information:
+    - http://docs.shopify.com/themes/liquid-variables/comment
+{% endcomment %}
+
+{% comment %}
+  We're going to reference the number of comments below, so let's hold it in a variable.
+{% endcomment %}
+
+{% assign number_of_comments = article.comments_count %}
+
+{% comment %}
+  If a comment was just submitted and it has no blank fields, we have an extra comment to count.
+{% endcomment %}
+
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+<div id="shopify-section-article-template" class="shopify-section col-12 col-xl-9 col-main">
+  
+  <div class="blog-detail">
+    <div class="article__banner">
+      <img src="{{ article.image | img_url: 'master' }}" alt="" loading="lazy">
+    </div>
+    <h1 class="article-title">
+      {% render 'multilang' with article.title %}
+    </h1>
+    
+    <div class="blog_author">  
+      {% capture date %}
+        <time datetime='{{ article.published_at | date: '%Y-%m-%d' }}'>{{ article.published_at | date: '%b %d, %Y' }}</time>
+      {% endcapture %}
+      {% capture dateUpdate %}
+        <time datetime='{{ article.updated_at | date: '%Y-%m-%d' }}'>{{ article.updated_at | date: '%b %d, %Y' }}</time>
+      {% endcapture %}
+      
+      {% capture author %}by {{ article.author }}{% endcapture %}
+      
+      {% if section.settings.blog_show_author %}
+      <span class="article__author">
+        <a href="/pages/{{article.author | handleize}}">{{ author }}</a>        
+      </span>
+      {% endif %}
+
+      {% if section.settings.blog_show_date %}
+      <span class="article__date">
+        on {{ date }}
+      </span>
+      {% endif %}
+
+      <span class="article__date_update">
+      |  Update at {{ dateUpdate }}
+      </span>
+      {% if blog.comments_enabled? %}
+      <a class="blog-comment" href="{{ article.url }}#comments"{% if settings.enable_multilang %} data-translate="blogs.comments.comments_with_count|count:{{ article.comments_count }}"{%endif%}>
+        {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+      </a>
+      {% endif %}  
+    </div>
+    
+    <div class="article-details">
+      <div class="article_container">
+        {% if settings.enable_multilang and article.content contains '[lang2]' %}
+        <div class="article__main rte lang1">
+          {{ article.content | split: '[lang2]' | first}}
+        </div>
+        <div class="article__main rte lang2">
+          {{ article.content | split: '[lang2]' | last}}
+        </div>
+        {% else %}
+        <div class="article__main rte">
+          {{ article.content | split: '[lang2]' | first}}
+
+          
+          {% if article.metafields.custom.question_title_1 != blank %}
+            <div class="faq_articles">
+
+              <div class="faq_articles__main_title">Frequently Asked Questions:</div>
+              <div class="faq_articles__item">
+                <div class="faq_articles__title">{{ article.metafields.custom.question_title_1 }} {% render 'icon-down' %}</div>
+                <div class="faq_articles__text">{{ article.metafields.custom.question_text_1 }}</div>
+              </div>
+
+              {% if article.metafields.custom.question_title_2 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_2 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_2 }}</div>
+                </div>
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_3 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_3 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_3 }}</div>
+                </div>
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_4 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_4 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_4 }}</div>
+                </div>
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_5 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_5 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_5 }}</div>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {% if article.metafields.custom.question_title_1 != blank %}
+                  {
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_1}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "{{article.metafields.custom.question_text_1}}"
+                    }
+                  }, 
+                {% endif %}
+                {% if article.metafields.custom.question_title_2 != blank %}
+                  {
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_2}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "{{article.metafields.custom.question_text_2}}"
+                    }
+                  }, 
+                {% endif %}
+                {% if article.metafields.custom.question_title_3 != blank %}
+                  {
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_3}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "{{article.metafields.custom.question_text_3}}"
+                    }
+                  }, 
+                {% endif %}
+                {% if article.metafields.custom.question_title_4 != blank %}
+                  {
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_4}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "{{article.metafields.custom.question_text_4}}"
+                    }
+                  }, 
+                {% endif %}
+                {% if article.metafields.custom.question_title_5 != blank %}
+                  {
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_5}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text":"{{article.metafields.custom.question_text_5}}"
+                    }
+                  }
+                {% endif %}
+              ]
+            }
+            </script>
+            
+        </div>
+        {% endif %}
+        <div class="top_articles">
+          <div class="top_articles__container">
+            <div class="top_articles__title">Top posts</div>
+
+            {% assign articlesList = section.settings.top_articles | split: ',' %}
+      
+            {% for item in articlesList %}
+              {% assign articleItem = articles[item] %}
+              <a href="{{ articleItem.url }}">{{ articleItem.title }} {% render 'icon-right' %}</a>
+            {% endfor %}
+          </div>
+          
+        </div>
+
+          
+      </div>
+    </div>
+
+    {% render 'star-rating' %}
+
+    {% render 'blog-detail-gallery_lookbook' %}
+    
+    <div class="tags-share">
+      <ul class="user-tags">
+        {% render 'tags-article' %}
+      </ul>
+
+      {% render 'share' %}
+    </div>
+
+    {% if blog.next_article or blog.previous_article %}
+    <div class="action-btn">
+      {% if blog.previous_article %}
+      <div class="btn-left">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }}
+      </div>    
+      {% endif %}
+      
+      {% if blog.next_article %}
+      <div class="btn-right">
+        {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }}
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if blog.comments_enabled? %}
+
+    {% comment %}
+    Just like our blog.liquid page, define how many comments should be on each page.
+    {% endcomment %}
+
+    {% if number_of_comments > 0 %}
+    <h2 class="title-comment">
+      {{ 'blogs.comments.comments_with_count' | t: count: number_of_comments }}
+    </h2>
+    {% endif %}
+    
+    {% paginate article.comments by 5 %}
+
+    {% comment %}
+    #comments is required, it is used as an anchor link by Shopify.
+    {% endcomment %}
+    
+    <div id="comments">
+      {% if comment and comment.created_at %}
+      <div class="note form-success">
+        {% if blog.moderated? %}
+        <span {% if settings.enable_multilang %}data-translate="blogs.comments.success_moderated"{%endif%}>
+          {{ 'blogs.comments.success_moderated' | t }}
+        </span>
+        {% else %}
+        <span {% if settings.enable_multilang %}data-translate="blogs.comments.success"{%endif%}>
+          {{ 'blogs.comments.success' | t }}
+        </span>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if number_of_comments > 0 %}
+      <ul class="list-comments">
+        {% comment %}If a comment was just submitted with no blank field, let's show it.{% endcomment %}
+        {% if comment and comment.created_at %}
+        <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
+          {% render 'comment', comment: comment, article: article %}
+        </li>
+        {% endif %}
+
+        {% comment %}
+        Showing the rest of the comments.
+        {% endcomment %}
+        
+        {% for comment in article.comments %}
+        <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+          {% render 'comment', comment: comment, article: article %}
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% if paginate.pages > 1 %}
+      {% render 'pagination', paginate: paginate %}
+      {% endif %}
+      
+      {% endif %}
+
+      {% comment %}
+      Comment submission form
+      {% endcomment %}
+
+      {% form article %}
+      
+      {% comment %}
+      #add-comment-title is used simply as an anchor link
+      {% endcomment %}
+      
+      <h3 class="title-comment" id="add-comment-title" {% if settings.enable_multilang %}data-translate="blogs.comments.title"{%endif%}>
+        {{ 'blogs.comments.title' | t }}
+      </h3>
+      
+      {% render 'form-errors-custom' %}
+      
+      <div class="comment-form">
+        <div class="form-group">
+          <label for="comment-author" {% if settings.enable_multilang %}data-translate="blogs.comments.name"{%endif%}>
+            {{ 'blogs.comments.name' | t }}
+          </label>
+          <input {% if form.errors contains "author" %}class="error"{% endif %} type="text" name="comment[author]" id="comment-author" value="{{ form.author }}">
+        </div>
+
+        <div class="form-group">
+          <label for="comment-email" {% if settings.enable_multilang %}data-translate="blogs.comments.email"{%endif%}>
+            {{ 'blogs.comments.email' | t }}
+          </label>
+          <input {% if form.errors contains "email" %}class="error"{% endif %} type="email" name="comment[email]" id="comment-email" value="{{ form.email }}">
+        </div>
+      </div>
+
+      <div class="message form-group">
+        <label for="comment-body" {% if settings.enable_multilang %}data-translate="blogs.comments.message"{%endif%}>
+          {{ 'blogs.comments.message' | t }}
+        </label>
+        <textarea rows="7" {% if form.errors contains "body" %}class="error"{% endif %} name="comment[body]" id="comment-body">
+          {{ form.body }}
+        </textarea>
+      </div>
+
+      <div class="note" {% if settings.enable_multilang %}data-translate="blogs.comments.note"{%endif%}>
+        {{ 'blogs.comments.note' | t }}
+      </div>
+
+
+      <input type="submit" class="btn" value="{{ 'blogs.comments.post' | t }}">
+      
+      {% if form.errors %}
+      <script>
+        window.location.hash = '#add-comment-title';
+      </script>
+      {% endif %}
+
+      {% if form.posted_successfully? %}
+      <script>
+        window.location.hash = '#comments';
+      </script>
+      {% endif %}
+      {% endform %}
+    </div>
+    {% endpaginate %}
+    {% endif %}
+  </div>
+    
+  {% render 'blog-related' %}
+</div>
+
+<script>
+  const h2Elements = document.querySelectorAll('.article-details h2, .article-details h3')
+  const tableContentContainer = document.createElement("div"); 
+  const tableContent = document.createElement("ul"); 
+  const tableContentTitle = document.createElement("div"); 
+  const article = document.querySelector('.article-details')
+  tableContent.classList.add('table_content')
+  tableContentContainer.classList.add('table_content_container')
+  tableContentTitle.classList.add('table_content_title')
+  tableContentTitle.textContent = 'Table of Contents'
+
+  
+
+  h2Elements.forEach((el, index) => {
+      let spanElement = document.createElement("span");
+      spanElement.setAttribute('id', `h2_${index}`)
+      el.append(spanElement)
+      let li = document.createElement("li");
+      li.innerHTML = `<a href="{{article.url}}/#h2_${index}">${el.textContent}</a>` 
+      tableContent.append(li)
+      
+  })
+  tableContentContainer.prepend(tableContent)
+  article.prepend(tableContentContainer)
+  tableContentContainer.prepend(tableContentTitle)
+</script>
+
+<style>
+  .article-details h2{ position:relative; font-size: 20px; font-weight: 400; }
+  .article-details h2 span{ position:absolute; top:-200px;}
+</style>

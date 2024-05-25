@@ -1,0 +1,20 @@
+{% assign collectionList = collection.metafields.my_fields.related_collections.value %}
+{% if collectionList != blank %}
+    <div class="collection_list">
+        <h3 class="collection_list__title">Related collections</h3>
+        <div class="collection_list__content">
+            {% assign collectionList = collection.metafields.my_fields.related_collections.value %}
+            {% for item in collectionList %}    
+                {% assign collectionItem = collections[item] %}
+                <div class="collection_list__item">
+                    <a href="{{collectionItem.url}}" class="collection_list__link"></a>
+                    <div class="img_wr">
+                        <img src="{{ collectionItem.image | img_url: '600x'}}" alt="" loading="lazy" class="collection_list__image">
+                    </div>
+                    
+                    <div class="collection_list__item_title">{{collectionItem.title}}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

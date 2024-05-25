@@ -1,0 +1,180 @@
+{% if cart.attributes.pagination != blank and cart.attributes.pagination %}
+    {% assign product_per_page = cart.attributes.pagination %}
+{% else %}
+    {% assign product_per_page = section.settings.collection_results_per_page %}
+{% endif %}
+
+{% paginate collection.products by product_per_page %}
+ 
+{% case section.settings.collection_results_per_row %}
+    {% when '1' %}
+        {%- assign grid_item_width = 'col-12' -%}
+        {%- assign rows = 'products-list' -%}
+
+    {% when '2' %}
+        {%- assign grid_item_width = 'col-6' -%}
+        {%- assign rows = 'products-grid' -%}
+
+    {% when '3' %}
+        {%- assign grid_item_width = 'col-6 col-md-4' -%}
+        {%- assign rows = 'products-grid' -%}
+
+    {% when '4' %}
+        {%- assign grid_item_width = 'col-6 col-md-4 col-lg-3' -%}
+        {%- assign rows = 'products-grid' -%}
+
+    {% when '5' %}
+        {%- assign grid_item_width = 'col-6 col-md-4 col-lg-3 col5' -%}
+        {%- assign rows = 'products-grid' -%}
+{% endcase %}
+{% assign with_banner_number = section.settings.collection_results_per_row | times: '2' %}
+<div id="shopify-section-collection-template-no-sidebar" class="shopify-section col-no-sidebar">
+    {% render 'toolbar' %}
+    <div id="CollectionProductGrid">
+        <div data-section-id="{{ section.id }}" data-section-type="collection-template" id="main-collection-product-grid" data-id="{{ section.id }}">  
+            
+            <div class="product-collection {{ rows }} row">
+                {% if collection.products_count > 0 %}  
+                {% for product in collection.products %}
+                <div class="grid-item {{ grid_item_width }} {% if settings.product_image_border%}grid-item-border {% endif %}">   
+                    {% if settings.style_product_grid == 'style_product_grid_2' %}
+                        {% render 'product-grid-item-style-2' with product as product, serial: forloop.index %}
+                    {% elsif settings.style_product_grid == 'style_product_grid_3' %}
+                        {% render 'product-grid-item-style-3' with product as product, serial: forloop.index %}
+                    {% elsif settings.style_product_grid == 'style_product_grid_4' %}
+                        {% render 'product-grid-item-style-4' with product as product, serial: forloop.index %}
+                    {% elsif settings.style_product_grid == 'style_product_grid_6' %}
+                        {% render 'product-grid-item-style-6' with product as product, serial: forloop.index %}
+                    {% else %}
+                        {% render 'product-grid-item' with product as product, serial: forloop.index %}
+                    {% endif %}
+                </div>
+                {% if forloop.index == with_banner_number and section.settings.show_banner %}
+                <div class="col-12 banner-collection--grid {% if section.settings.img_banner1 == blank %}{% endif %}">
+                    <div class="grid--layout">
+                        {% if section.settings.img_banner1 != blank and section.settings.show_banner_1 %}
+                        <div class="banner {% if section.settings.img_banner2 == blank %}only{% endif %}">
+                            <a href="{{ section.settings.link_banner_1 }}" class="adaptive_height" style="padding-top: {{ 1 | divided_by:  section.settings.img_banner1.aspect_ratio | times: 100 }}%">
+                                <img data-srcset="{{ section.settings.img_banner1 | img_url: '1024x' }}" class="lazyload" alt="{{ section.settings.img_banner1.alt | default: shop.name }}" />
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if section.settings.img_banner2 != blank and section.settings.show_banner_2 %}
+                        <div class="banner {% if section.settings.img_banner1 == blank %}only{% endif %}">
+                            <a  href="{{ section.settings.link_banner_2 }}" class="adaptive_height" style="padding-top: {{ 1 | divided_by:  section.settings.img_banner2.aspect_ratio | times: 100 }}%">
+                                <img data-srcset="{{ section.settings.img_banner2 | img_url: '1024x' }}" class="lazyload" alt="{{ section.settings.img_banner2.alt | default: shop.name }}" />
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% else %}
+                <p class="col-12 text-center" {% if settings.enable_multilang %}data-translate="collections.general.no_matches"{% endif %}>
+                    {{ 'collections.general.no_matches' | t }}
+                </p>
+                {% endif %}
+            </div>
+
+            {% if collection.metafields.custom.questions_titles != blank %}
+            <div class="faq_articles">
+
+              <div class="faq_articles__main_title">Frequently Asked Questions:</div>
+              <div class="faq_articles__item">
+                <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[0] }} {% render 'icon-down' %}</div>
+                <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[0] }}</div>
+              </div>
+
+              {% if collection.metafields.custom.questions_titles.value[1] != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[1] }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[1] }}</div>
+                </div>
+              {% endif %}
+
+              {% if collection.metafields.custom.questions_titles.value[2] != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[2] }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[2] }}</div>
+                </div>
+              {% endif %}
+
+              {% if collection.metafields.custom.questions_titles.value[3] != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[3] }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[3] }}</div>
+                </div>
+              {% endif %}
+
+              {% if collection.metafields.custom.questions_titles.value[4] != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[4] }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[4] }}</div>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+            {% if paginate.pages > 1 %}
+            <div class="padding">
+                {% render 'pagination-page' paginate: paginate %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if paginate.current_page == 1 and collection.description != blank %}
+    <div class="collection__description">  
+        <div id="collection__description_content" class="collection__description_content">
+            {{collection.description  | replace : "<h1>",  "<h2>" | replace : "</h1>",  "</h2>"}}        
+        </div>
+        {% comment %} <button class="btn" data-container='collection__description_content'>Show more</button>     {% endcomment %}
+    </div>
+    {% endif %}
+</div>
+{% endpaginate %}   
+
+<script>
+(function() {
+
+  
+
+  var linkToggle = document.querySelector('.collection__description .btn');
+
+ 
+    linkToggle.addEventListener('click', function(event){
+  
+      event.preventDefault();
+  
+      var container = document.getElementById(linkToggle.dataset.container);
+  
+      if (!container.classList.contains('active')) {
+        container.classList.add('active');
+        container.style.height = 'auto';
+  
+        var height = container.clientHeight + 'px';
+  
+        container.style.height = '200px';
+        linkToggle.innerText = 'Show less';
+        setTimeout(function () {
+          container.style.height = height;
+        }, 0);
+        
+      } else {
+        container.style.height = '200px';
+  
+        linkToggle.innerText = 'Show more';
+        container.addEventListener('transitionend', function () {
+          container.classList.remove('active');
+        }, {
+          once: true
+        });
+        
+      }
+      
+
+  
+  })
+})();
+</script>

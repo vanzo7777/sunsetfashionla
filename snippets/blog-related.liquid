@@ -1,0 +1,19 @@
+{% if article.metafields.custom.related_articles %}
+  <div class="blog_related">
+    <div class="widget-title">
+        <h3 class="box-title">
+          <span class="title"> 
+            
+            <span>Recommended articles</span>
+
+          </span>
+        </h3>
+    </div>
+    <ul class="list-blog">    
+        {% for articleRelated in article.metafields.custom.related_articles.value %}
+            {% assign articleItem = articles[articleRelated] %}
+            {% render 'blog-item' with  articleItem as article %}
+        {% endfor %}
+      </ul>
+  </div>
+{% endif %}

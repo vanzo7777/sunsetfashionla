@@ -1,0 +1,7 @@
+div#CollectionProductGrid p.page-total {
+    display: none;
+}
+div#CollectionProductGrid .padding .toolbar-bottom
+{
+  justify-content:center; 
+}

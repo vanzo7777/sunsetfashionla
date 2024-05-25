@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "9b471744-8a01-4d16-9825-9bf3276d32e8": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/S9e749683df7340f9b9437ab709c98a83r.jpg",
+            "collection": "dresses",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "1067d629-245a-4169-a257-1744429518ea": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "gown-dresses",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "82773675-7293-4345-b49f-b44edbcd94e7": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main-image-4_b8838012-f032-4a14-8046-1e6239830d51.webp",
+            "collection": "two-piece-sets",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "ca405e04-a571-4ef5-8eb0-d37712fc0da7": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/S7f587722b26f4eae9c60d2a76bfcd41e4_95ab7306-32ef-41e1-9a1f-d27e96a34b3d.jpg",
+            "collection": "sweaters-and-cardigans",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        },
+        "26f450bd-ad83-4513-8d20-34b652a7c5de": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/S6bbdc4169d44489aabb552a1a030b47b6_1.webp",
+            "collection": "jumpsuits-and-playsuits",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "a41b1061-7460-4eb7-8afe-40c5f260dd4b": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "accessories",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "00e41c7b-6f27-446d-a5d8-3b4128d07da0": {
+          "type": "collection_list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main-image-6_3dd956f2-10b8-4b93-bbca-38135a0386fc.jpg",
+            "collection": "jackets-and-blazers",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "1e6c3edb-ed9a-4648-946e-de70582832eb": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "tops",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "6d9d0e3f-857a-42ee-a2a3-8e39985f8446": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "bottoms",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "6e183af8-20a4-4a9e-9678-c0f05f383631": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "shoes",
+            "display_countdow": false,
+            "title": "Special Offers",
+            "des": "Sale up to 60% off on selected items. End ins:",
+            "countdown": "2020\/01\/7 0:0:00",
+            "color": "#ffffff"
+          }
+        },
+        "f4f92dd2-725c-49a0-9b14-24d4bbd5b057": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "new-arrivals",
+            "display_countdow": false,
+            "title": "",
+            "des": "",
+            "countdown": "",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "9b471744-8a01-4d16-9825-9bf3276d32e8",
+        "1067d629-245a-4169-a257-1744429518ea",
+        "82773675-7293-4345-b49f-b44edbcd94e7",
+        "ca405e04-a571-4ef5-8eb0-d37712fc0da7",
+        "26f450bd-ad83-4513-8d20-34b652a7c5de",
+        "a41b1061-7460-4eb7-8afe-40c5f260dd4b",
+        "00e41c7b-6f27-446d-a5d8-3b4128d07da0",
+        "1e6c3edb-ed9a-4648-946e-de70582832eb",
+        "6d9d0e3f-857a-42ee-a2a3-8e39985f8446",
+        "6e183af8-20a4-4a9e-9678-c0f05f383631",
+        "f4f92dd2-725c-49a0-9b14-24d4bbd5b057"
+      ],
+      "settings": {
+        "list_collection_results_per_row": "3",
+        "list_collection_title_size": "20",
+        "style_categories": "style_little",
+        "bg_color": "#fafafa"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

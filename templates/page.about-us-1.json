@@ -1,0 +1,67 @@
+{
+  "wrapper": "div.page-tpl.about-us-1",
+  "sections": {
+    "slider": {
+      "type": "about-us-1-slideshow",
+      "blocks": {
+        "4b1c8688-907c-464d-b5bc-9679fa7ed40d": {
+          "type": "content",
+          "settings": {
+            "title": "The Brand",
+            "content": "SunsetFashionLA is the place where LA cool meets NYC edgy, Miami fun and sexy, Tulum boho chic, and French Riviera sophisticated and elegant.\n\nWhether you are planning a work meeting, beach day, brunch with your girls, a date, or a night out, we have trendy styles for all occasions which will make you stand out from the crowd and look your best!",
+            "dpl_qoute": false,
+            "qoute_heading": "",
+            "name": "",
+            "qoute_content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "6415519d-1d85-4eee-ad4d-05a9c343f126": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "Cosmopolis de Milance",
+            "content": "Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus meleifend menean diverra loremous. Nullam sit amet orci rutrum risus laoreet semper vel non magna. Mauris vel sem a lectus vehicula ultricies. Etiam semper sollicitudin lectus indous scelerisque. Curabitur vel tristique lacus. Nam risus mauris, accumsan et eleifend vitae, dignissim at eros. Vivamus pellentesque dui ex, a interdum orci dignissim vel.",
+            "dpl_qoute": true,
+            "qoute_heading": "Managing Director",
+            "name": "Anne.l",
+            "qoute_content": "Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus meleifend menean diverra loremous. Nullam sit amet orci rutrum risus laoreet semper vel non magna. Mauris vel sem a lectus vehicula ultricies...",
+            "button_text": "Meet The Team",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "4b1c8688-907c-464d-b5bc-9679fa7ed40d",
+        "6415519d-1d85-4eee-ad4d-05a9c343f126"
+      ],
+      "settings": {
+        "autoplay": false,
+        "slideshow_speed": "5000",
+        "background_image": "shopify:\/\/shop_images\/Screen_Shot_2022-03-31_at_4.26.22_PM.png",
+        "text_color": "#202020",
+        "title_size": "40",
+        "button_bg_color": "#a7a7a7",
+        "button_text_color": "#ffffff",
+        "button_bd_color": "#ffffff",
+        "button_bg_color_h": "rgba(0,0,0,0)",
+        "button_text_color_h": "#ffffff",
+        "button_bd_color_h": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "about-us-1-content",
+      "settings": {
+        "left_heading": "About Sunsetfashionla",
+        "left_content": "Born in the heart of LA on Sunset Blvd., SunsetFashionLA brings you the trendiest looks and timeless pieces.\n\nAfter traveling the world and planning our trips, we couldn't find an online shop with styles for every occasion.\n\nSunsetFashionLA is the place where LA cool meets NYC edgy, Miami fun and sexy, Tulum boho chic, and French Riviera sophisticated and elegant.\n\nWhether you are planning a work meeting, beach day, brunch with your girls, a date, or a night out, we have styles for all occasions which will make you stand out from the crowd and look your best!",
+        "right_heading": "Contact Us",
+        "right_content": "We love getting to know our customers! If you need help picking an outfit, have questions on sizing, shipping and delivery, or have any other question, please contact us by filling out a contact form or clicking a \"Chat with us!\" button below."
+      }
+    }
+  },
+  "order": [
+    "slider",
+    "main"
+  ]
+}

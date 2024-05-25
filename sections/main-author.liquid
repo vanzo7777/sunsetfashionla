@@ -1,0 +1,61 @@
+<div class="author halo-blog-content">
+    <div class="container">
+        <div class="author__content">
+            <div class="author__bio">
+                <div class="author__image">
+                    <div class="author__avatar">
+                        <img src="{{ page.metafields.custom.author_photo | img_url: '300x' }}" alt="" loading="lazy">
+                    </div>
+                    <div class="author__name">{{ page.metafields.custom.author }}</div>
+                    <div class="author__company"> <span>Company:</span> {{ page.metafields.custom.author_company }}</div>
+                    <div class="author__position"><span>Job title:</span> {{ page.metafields.custom.author_job_title }}</div>
+
+                    <div class="author__social">
+                        {% if page.metafields.custom.author_instagram %}
+                            <a href="https://{{ page.metafields.custom.author_instagram }}" title="Instagram" target="_blank">
+                                <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        {% if page.metafields.custom.author_facebook %}
+                            <a href="https://{{ page.metafields.custom.author_facebook }}" title="Facebook" target="_blank">
+                                <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        {% if page.metafields.custom.author_twitter %}
+                            <a href="https://{{ page.metafields.custom.author_twitter }}" title="Twitter" target="_blank">
+                                <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        {% if page.metafields.custom.author_linkedin %}
+                            <a href="https://{{ page.metafields.custom.author_linkedin }}" title="Linkedin" target="_blank">
+                                <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="author__info">
+                    <div class="author__description">{{ page.metafields.custom.author_description }}</div>
+                </div>
+            </div>
+
+            <div class="author__articles">
+                <div class="author__title">Author's blog posts</div>
+                {% assign my_blogs = "pink-and-green-trend,news" | split: "," %}
+                <ul class="list-blog">
+                    {% for blog_handle in my_blogs %}
+                        {% assign this_blog = blogs[blog_handle] %}
+                        {% for article in this_blog.articles %}
+                            {% if article.author == page.metafields.custom.author  %}
+                                {% render 'blog-item' with article as article %}
+                            {% endif %}
+                            
+                        {% endfor %}
+                    {% endfor %}
+                </ul>                
+            </div>
+        </div>
+    </div>
+</div>
+
+    

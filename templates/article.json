@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "67ab6d61-42d0-43e4-9cd8-4ff611273e6f": {
+          "type": "sidebar_blog",
+          "disabled": true,
+          "settings": {
+            "display_sidebar_blog_page": true,
+            "show_sidebar": "left",
+            "display_sidebar_link": true,
+            "sidebar_link_title": "Categories",
+            "style_categories": "style_little",
+            "link_list": "main-menu",
+            "sidebar_recent_art": true,
+            "sidebar_blog_tags": false,
+            "enable_product": true,
+            "title_product": "Featured Products",
+            "collection": "cosmetic-all",
+            "limit": "3",
+            "enable_img_1": true,
+            "link_img_1": "shopify:\/\/collections\/cosmopolitan",
+            "enable_img_2": true,
+            "link_img_2": "shopify:\/\/collections\/cosmopolis",
+            "enable_custom_block": true,
+            "title_custom_block": "Custom Block",
+            "quote_custom_block": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... whatever you like.<\/p>\n<p>There are many similar sample content placeholders across the store. All editable from admin panel.<\/p>"
+          }
+        },
+        "267e78de-ff17-4f52-8c54-533ad3d13605": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "lb_product_1_1": "aeque-mollis-urnan-lementum",
+            "top_position_1_1": "10",
+            "left_position_1_1": "10",
+            "dots_color_1_1": "#ffffff",
+            "dots_bg_color_1_1": "#323232",
+            "dots_shadow_color_1_1": "#ffffff",
+            "lb_product_1_2": "dempus-lortis-cosmo-sapiendo",
+            "top_position_1_2": "20",
+            "left_position_1_2": "20",
+            "dots_color_1_2": "#ffffff",
+            "dots_bg_color_1_2": "#323232",
+            "dots_shadow_color_1_2": "#ffffff",
+            "lb_product_1_3": "dinterdum-preteus-tomuir-leggings",
+            "top_position_1_3": "30",
+            "left_position_1_3": "30",
+            "dots_color_1_3": "#ffffff",
+            "dots_bg_color_1_3": "#323232",
+            "dots_shadow_color_1_3": "#ffffff",
+            "lb_product_2_1": "dempus-lortis-cosmo-sapiendo",
+            "top_position_2_1": "10",
+            "left_position_2_1": "10",
+            "dots_color_2_1": "#ffffff",
+            "dots_bg_color_2_1": "#323232",
+            "dots_shadow_color_2_1": "#ffffff",
+            "lb_product_2_2": "dinterdum-preteus-tomuir-leggings",
+            "top_position_2_2": "40",
+            "left_position_2_2": "40",
+            "dots_color_2_2": "#ffffff",
+            "dots_bg_color_2_2": "#323232",
+            "dots_shadow_color_2_2": "#ffffff",
+            "lb_product_2_3": "",
+            "top_position_2_3": "10",
+            "left_position_2_3": "10",
+            "dots_color_2_3": "#ffffff",
+            "dots_bg_color_2_3": "#323232",
+            "dots_shadow_color_2_3": "#ffffff",
+            "lb_product_3_1": "furus-pulvinar-vestibulum-mini",
+            "top_position_3_1": "10",
+            "left_position_3_1": "10",
+            "dots_color_3_1": "#ffffff",
+            "dots_bg_color_3_1": "#323232",
+            "dots_shadow_color_3_1": "#ffffff",
+            "lb_product_3_2": "dinterdum-pretium-de-condimento",
+            "top_position_3_2": "40",
+            "left_position_3_2": "40",
+            "dots_color_3_2": "#ffffff",
+            "dots_bg_color_3_2": "#323232",
+            "dots_shadow_color_3_2": "#ffffff",
+            "lb_product_3_3": "faucibus-sullamcorper-matti-drost",
+            "top_position_3_3": "60",
+            "left_position_3_3": "60",
+            "dots_color_3_3": "#ffffff",
+            "dots_bg_color_3_3": "#323232",
+            "dots_shadow_color_3_3": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "67ab6d61-42d0-43e4-9cd8-4ff611273e6f",
+        "267e78de-ff17-4f52-8c54-533ad3d13605"
+      ],
+      "settings": {
+        "blog_show_author": true,
+        "blog_show_date": true,
+        "top_articles": "news\/what-color-suits-me-best,news\/wedding-guest-clothing-guide,news\/best-women-autumn-outfits",
+        "dpl_lookbook_description": false,
+        "quote_title": "Sample Block Quote",
+        "quote_des": "Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo loremous convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos.",
+        "quote_title_2": "Sample Paragraph Text",
+        "quote_des_2": "<p>\nPraesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos dui.\n<\/p>\n<p>\nCras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper neque. Sed vitae mi a mi pretium aliquet ac sed elitos. Pellentesque nulla eros accumsan quis justo at tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus pulvinar. Vestibulum sit amet auctor ipsum.\n<\/p>",
+        "dpl_gallery_lookbook": false,
+        "gallery_lb_title": "LookBook Gallery",
+        "show_cart_best_sellers_product": true,
+        "title": "Shop New Arrivals",
+        "show_slider_featured_collection": "new-arrivals",
+        "slider_featured_limit_all": 13,
+        "collection_results_per_row1": "5"
+      }
+    },
+    "16578336980850b60e": {
+      "type": "newsletter-block",
+      "blocks": {
+        "165783369813fa6b95-0": {
+          "type": "image",
+          "settings": {
+            "image_new": "shopify:\/\/shop_images\/Untitled_design_1.png",
+            "banner_title": "Newsletter Sign Up",
+            "font_size_banner_title": "20px",
+            "color_banner_title": "#ffffff",
+            "banner_heading": "Receive our latest updates about our products and promotions.",
+            "font_size_banner_heading": "12px",
+            "color_banner_heading": "#ffffff",
+            "ft_input": "#ffffff",
+            "ft_input_br": "#ffffff",
+            "ft_input_text": "#5f5f5f",
+            "ft_submit": "#0f0f0f",
+            "ft_submit_br": "#0f0f0f",
+            "ft_submit_text": "#ffffff",
+            "ft_submit_hover": "#ffffff",
+            "ft_submit_br_hover": "#232323",
+            "ft_submit_text_hover": "#232323"
+          }
+        }
+      },
+      "block_order": [
+        "165783369813fa6b95-0"
+      ],
+      "settings": {
+        "display_block_newsletter": true,
+        "margin_bottom_mb": 0,
+        "margin_bottom_tab": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16578336980850b60e"
+  ]
+}

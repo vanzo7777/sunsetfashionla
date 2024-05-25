@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+      }
+    },
+    "recently-view": {
+      "type": "recently-viewed-products",
+      "settings": {
+      }
+    },
+    "alireviews-section-1700097075665": {
+      "type": "apps",
+      "blocks": {
+        "alireviews-block-1700097075665": {
+          "type": "shopify:\/\/apps\/ali-reviews-product-reviews\/blocks\/widget-box\/bf2eea72-0400-4db1-8908-44b7418f9a88",
+          "settings": {
+            "name": "Review Box 1",
+            "vertical_alignment": "2",
+            "rating_color": "#1F1F1F",
+            "section_color": "#ffffff",
+            "primary_text_color": "#1F1F1F"
+          }
+        }
+      },
+      "block_order": [
+        "alireviews-block-1700097075665"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recently-view",
+    "alireviews-section-1700097075665"
+  ]
+}
