@@ -1,0 +1,70 @@
+{% assign title = section.settings.title | default: 'Frequently Asked Questions:' %}
+
+{% if section.blocks.size > 0 %}
+  <div class="faq_articles">
+    <div class="faq_articles__main_title">{{ title }}</div>
+
+    {% for block in section.blocks %}
+
+      <div class="faq_articles__item">
+        <div class="faq_articles__title">{{ block.settings.title }} {% render 'icon-down' %}</div>
+        <div class="faq_articles__text">{{ block.setting.content }}</div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+    {% for block in section.blocks %}
+            {
+              "@type": "Question",
+              "name": "{{ block.settings.title }}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ block.setting.content | strip_html }}"
+              }
+            }{% unless forloop.last %}{% endunless %}
+    {% endfor %}
+    ]
+  }
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "label": "Title",
+      "id": "title",
+      "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "faq",
+      "settings": [
+        {
+          "label": "Title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Content",
+          "id": "content",
+          "type": "richtext"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ section"
+    }
+  ]
+}
+{% endschema %}
