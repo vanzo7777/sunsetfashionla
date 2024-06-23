@@ -87,43 +87,36 @@
 
 
      {% if collection.metafields.custom.questions_titles != blank and paginate.current_page == 1 %}
-            <div class="faq_articles">
+        <div class="faq_articles">
+          <div class="faq_articles__main_title">Frequently Asked Questions:</div>
 
-              <div class="faq_articles__main_title">Frequently Asked Questions:</div>
-              <div class="faq_articles__item">
-                <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[0] }} {% render 'icon-down' %}</div>
-                <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[0] }}</div>
-              </div>
-
-              {% if collection.metafields.custom.questions_titles.value[1] != blank %}
-                <div class="faq_articles__item">
-                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[1] }} {% render 'icon-down' %}</div>
-                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[1] }}</div>
-                </div>
-              {% endif %}
-
-              {% if collection.metafields.custom.questions_titles.value[2] != blank %}
-                <div class="faq_articles__item">
-                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[2] }} {% render 'icon-down' %}</div>
-                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[2] }}</div>
-                </div>
-              {% endif %}
-
-              {% if collection.metafields.custom.questions_titles.value[3] != blank %}
-                <div class="faq_articles__item">
-                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[3] }} {% render 'icon-down' %}</div>
-                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[3] }}</div>
-                </div>
-              {% endif %}
-
-              {% if collection.metafields.custom.questions_titles.value[4] != blank %}
-                <div class="faq_articles__item">
-                  <div class="faq_articles__title">{{ collection.metafields.custom.questions_titles.value[4] }} {% render 'icon-down' %}</div>
-                  <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[4] }}</div>
-                </div>
-              {% endif %}
+          {% for value in collection.metafields.custom.questions_titles.value %}
+            <div class="faq_articles__item">
+              <div class="faq_articles__title">{{ value }} {% render 'icon-down' %}</div>
+              <div class="faq_articles__text">{{ collection.metafields.custom.questions_texts.value[forloop.index0] }}</div>
             </div>
-          {% endif %}
+          {% endfor %}
+        </div>
+
+       <script type="application/ld+json">
+           {
+             "@context": "https://schema.org",
+             "@type": "FAQPage",
+             "mainEntity": [
+           {% for value in collection.metafields.custom.questions_titles.value %}
+            {
+              "@type": "Question",
+              "name": "{{ value }}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ collection.metafields.custom.questions_texts.value[forloop.index0] }}"
+              }
+            }{% unless forloop.last %},{% endunless %}
+           {% endfor %}
+           ]
+         }
+       </script>
+     {% endif %}
     
     {% if paginate.current_page == 1 and collection.description != blank %}
     <div class="collection__description">  

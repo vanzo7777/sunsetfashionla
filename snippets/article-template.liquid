@@ -115,6 +115,41 @@
                   <div class="faq_articles__text">{{ article.metafields.custom.question_text_5 }}</div>
                 </div>
               {% endif %}
+
+              {% if article.metafields.custom.question_title_6 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_6 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_6 }}</div>
+                </div>
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_7 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_7 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_7 }}</div>
+                </div>
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_8 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_8 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_8 }}</div>
+                </div>
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_9 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_9 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_9 }}</div>
+                </div>q
+              {% endif %}
+
+              {% if article.metafields.custom.question_title_10 != blank %}
+                <div class="faq_articles__item">
+                  <div class="faq_articles__title">{{ article.metafields.custom.question_title_10 }} {% render 'icon-down' %}</div>
+                  <div class="faq_articles__text">{{ article.metafields.custom.question_text_10 }}</div>
+                </div>
+              {% endif %}
             </div>
           {% endif %}
 
@@ -170,6 +205,56 @@
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text":"{{article.metafields.custom.question_text_5}}"
+                    }
+                  }
+                {% endif %}
+                {% if article.metafields.custom.question_title_6 != blank %}
+                  ,{
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_6}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text":"{{article.metafields.custom.question_text_6}}"
+                    }
+                  }
+                {% endif %}
+                {% if article.metafields.custom.question_title_7 != blank %}
+                  ,{
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_7}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text":"{{article.metafields.custom.question_text_7}}"
+                    }
+                  }
+                {% endif %}
+                {% if article.metafields.custom.question_title_8 != blank %}
+                  ,{
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_8}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text":"{{article.metafields.custom.question_text_8}}"
+                    }
+                  }
+                {% endif %}
+                {% if article.metafields.custom.question_title_9 != blank %}
+                  ,{
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_9}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text":"{{article.metafields.custom.question_text_9}}"
+                    }
+                  }
+                {% endif %}
+                {% if article.metafields.custom.question_title_10 != blank %}
+                  ,{
+                    "@type": "Question",
+                    "name": "{{article.metafields.custom.question_title_10}}",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text":"{{article.metafields.custom.question_text_10}}"
                     }
                   }
                 {% endif %}

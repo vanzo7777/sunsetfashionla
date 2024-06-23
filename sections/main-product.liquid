@@ -163,9 +163,9 @@ endfor
                   if(inventoryQuantity > 0 && inventoryQuantity <= max_stock){
                       var text_stock = window.inventory_text.hotStock.replace('[inventory]', inventoryQuantity);
                       $('[data-stock-hot]').text(text_stock).show();
-                      productInventory.find('span').text(inventoryQuantity + ' ' + window.inventory_text.in_stock);
+                      productInventory.find('span').text(window.inventory_text.in_stock);
                   }else if (inventoryQuantity > 0) {
-                      productInventory.find('span').text(inventoryQuantity + ' ' + window.inventory_text.in_stock);
+                      productInventory.find('span').text(window.inventory_text.in_stock);
                       $('[data-stock-hot]').hide();
                   } else{
                     productInventory.find('span').text(window.inventory_text.out_of_stock);
@@ -189,7 +189,7 @@ endfor
             }
             else {
                 $('[data-soldOut-product]').hide();
-                addToCartBtn.val(window.inventory_text.sold_out).addClass('disabled').attr('disabled', 'disabled');
+                addToCartBtn.val(window.inventory_text.unavailable).addClass('disabled').attr('disabled', 'disabled');
                 $('[data-stock-hot]').hide();
                 $('[data-form-notify]').slideDown();
                 var url = window.location.href.split('?variant')[0];
