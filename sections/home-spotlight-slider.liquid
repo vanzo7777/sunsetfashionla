@@ -3,11 +3,11 @@
     <div class="{% if section.settings.layout == 'default' %}container{% elsif section.settings.layout == 'padd_50' %}container-padd60{% else %}container-fluid{% endif %}">
         {% if section.settings.spotlight_block_title != blank or section.settings.spotlight_block_view_all != blank %}
         <div class="widget-title{% if section.settings.title_style == 'style_2' %} not-before {% elsif section.settings.title_style == 'style_3' %} style_3{% elsif section.settings.title_style == 'style_4' %} style_4 {% endif %}{% unless section.settings.spotlight_block_des != blank %} no-des{% endunless %}">   
-            <h3 class="box-title">
+            <h2 class="box-title">
                 <span class="title"> 
                 {% render 'multilang' with section.settings.spotlight_block_title %}
                 </span>
-            </h3>
+            </h2>
             {% if section.settings.spotlight_block_view_all != blank and section.settings.layout_style != 'style_5' %}
                 <a class="link_all" href="{{ section.settings.spotlight_block_view_all_link }}">{{ section.settings.spotlight_block_view_all }}</a>
             {% endif %}

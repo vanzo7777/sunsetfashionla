@@ -7,27 +7,27 @@
       </span>
     </a>
     {% if customer %}
-    <h5>
+    <div>
       {{ customer.name }}
-    </h5>
+    </div>
     {% else %}
       {% if settings.header_layout == '05' or settings.header_layout == '06' or settings.header_layout == '07' %}
-        <h5 {% if settings.enable_multilang %}data-translate="customer.login.title_login"{% endif %}>
+        <div {% if settings.enable_multilang %}data-translate="customer.login.title_login"{% endif %}>
           {{ 'customer.login.title_login' | t }}
-        </h5>
+        </div>
       {% elsif settings.header_layout == '08' %}
-        <h5 {% if settings.enable_multilang %}data-translate="customer.login.title"{% endif %}>
+        <div {% if settings.enable_multilang %}data-translate="customer.login.title"{% endif %}>
           {{ 'customer.login.title' | t }}
-        </h5>
+        </div>
         <p>{{ 'customer.login.note' | t }}</p>
       {% elsif settings.header_layout == 'parallax' %}
-        <h5 {% if settings.enable_multilang %}data-translate="customer.login.title"{% endif %}>
+        <div {% if settings.enable_multilang %}data-translate="customer.login.title"{% endif %}>
           {{ 'customer.login.sign_in' | t }}
-        </h5>
+        </div>
       {% else %}
-        <h5 {% if settings.enable_multilang %}data-translate="customer.login.title"{% endif %}>
+        <div {% if settings.enable_multilang %}data-translate="customer.login.title"{% endif %}>
           {{ 'customer.login.title' | t }}:
-        </h5>
+        </div>
       {% endif %}
     {% endif %}
   </div>

@@ -4,11 +4,11 @@
         <div class="brands-block">
             {% if section.settings.brand_title != blank or section.settings.brands_view_all != blank %}
             <div class="widget-title{% if section.settings.title_style == 'style_2' %} not-before{% endif %}{% if section.settings.title_style == 'style_3' %} style_3{% endif %}">
-                <h3 class="box-title">
+                <h2 class="box-title">
                     <span class="title">
                     {% render 'multilang' with section.settings.brand_title %}
                     </span>
-                </h3>
+                </h2>
                 {% if section.settings.brands_view_all != blank %}
                     <a class="link_all" href="{{ section.settings.brands_view_all_link }}">{{ section.settings.brands_view_all }}</a>
                 {% endif %}

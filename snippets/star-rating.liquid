@@ -107,6 +107,9 @@ width: 100%;
     
 </script>
 
+
+{% unless canonical_url contains 'blogs' %}
+
 <script type="application/ld+json">
     {
      "@context": "http://schema.org",
@@ -115,8 +118,9 @@ width: 100%;
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "{{ article.metafields.custom.rating_value }}",
-        "reviewCount": {{ article.metafields.custom.review_count }}
+        "reviewCount": "{{ article.metafields.custom.review_count }}"
         }
     }
-    </script>
-    
+</script>
+
+{% endunless %}

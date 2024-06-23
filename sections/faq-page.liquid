@@ -258,7 +258,7 @@
   </section>
 </div>
 
-<script>
+<script type="application/ld+json">
   {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -272,40 +272,40 @@
               "@type": "Answer",
               "text": "{{  block.settings.answer_faqs_1 | split: '|' | last}}"
             }
-          },
+          }
         {% endif %}
         {% if block.settings.question_faqs_2 != blank %}
-          {
+          ,{
             "@type": "Question",
             "name": "{{ block.settings.question_faqs_2 }}",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "{{  block.settings.answer_faqs_2 | split: '|' | last}}"
             }
-          },
+          }
         {% endif %}
         {% if block.settings.question_faqs_3 != blank %}
-          {
+          ,{
             "@type": "Question",
             "name": "{{ block.settings.question_faqs_3 }}",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "{{  block.settings.answer_faqs_3 | split: '|' | last}}"
             }
-          },
+          }
         {% endif %}
         {% if block.settings.question_faqs_4 != blank %}
-          {
+          ,{
             "@type": "Question",
             "name": "{{ block.settings.question_faqs_4 }}",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "{{  block.settings.answer_faqs_4 | split: '|' | last}}"
             }
-          },
+          }
         {% endif %}
         {% if block.settings.question_faqs_5 != blank %}
-          {
+          ,{
             "@type": "Question",
             "name": "{{ block.settings.question_faqs_5 }}",
             "acceptedAnswer": {

@@ -203,28 +203,6 @@
                       </div>
                       {% endif %}
 
-                      {% if section.settings.display_availability %}
-                      <div class="product-inventory">
-                          {% if section.settings.text_availability != blank %}
-                          <label>
-                              {{ section.settings.text_availability | split: '|' | first }}
-                          </label>
-                          {% endif %}
-                          <span>
-                          {% if current_variant.inventory_management %}
-                          {% assign first_inventory = current_variant.inventory_quantity %}
-                          {% if first_inventory > 0 %}
-                          {{first_inventory}} {{ 'products.product.in_stock' | t }}
-                          {% else %}
-                          {{ 'products.product.out_of_stock' | t }}
-                          {% endif %}
-                          {% else %}
-                          {{ 'products.product.many_in_stock' | t }}
-                          {% endif %}
-                          </span>
-                      </div>
-                      {% endif %}
-
                       {% if section.settings.display_product_type %}
                       <div class="product-type">
                           {% if section.settings.text_product_type != blank %}
@@ -297,6 +275,28 @@
                       {% endif %}
                       <input type="hidden" id="product_regular_price" name="product_regular_price" value="{{ product.price }}">
                   </div>
+
+                  {% if section.settings.display_availability %}
+                      <div class="product-inventory">
+                          {% if section.settings.text_availability != blank %}
+                          <label>
+                              {{ section.settings.text_availability | split: '|' | first }}
+                          </label>
+                          {% endif %}
+                         
+                          {% if current_variant.inventory_management %}
+                          {% assign first_inventory = current_variant.inventory_quantity %}
+                          {% if first_inventory > 0 %}
+                          <span class="instock">{{ 'products.product.in_stock' | t }}</span>
+                          {% else %}
+                          <span class="outofstock">{{ 'products.product.out_of_stock' | t }}</span>
+                          {% endif %}
+                          {% else %}
+                          <span class="instock">{{ 'products.product.many_in_stock' | t }}</span>
+                          {% endif %}
+                          
+                      </div>
+                      {% endif %}
 
                   {% if product.description contains '[countdown]' %}
                   {% assign des = product.description | split:'[/countdown]' | last %}
@@ -678,3 +678,4 @@
       </div>
   </div>
 </div>
+

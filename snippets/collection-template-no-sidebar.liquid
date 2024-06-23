@@ -77,7 +77,16 @@
                 {% endif %}
             </div>
 
-            {% if collection.metafields.custom.questions_titles != blank %}
+            {% if paginate.pages > 1 %}
+            <div class="padding">
+                {% render 'pagination-page' paginate: paginate %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+     {% if collection.metafields.custom.questions_titles != blank and paginate.current_page == 1 %}
             <div class="faq_articles">
 
               <div class="faq_articles__main_title">Frequently Asked Questions:</div>
@@ -115,14 +124,6 @@
               {% endif %}
             </div>
           {% endif %}
-
-            {% if paginate.pages > 1 %}
-            <div class="padding">
-                {% render 'pagination-page' paginate: paginate %}
-            </div>
-            {% endif %}
-        </div>
-    </div>
     
     {% if paginate.current_page == 1 and collection.description != blank %}
     <div class="collection__description">  

@@ -43,9 +43,9 @@
                 {% if block.type == 'footer_link' %}
                 <div class="col-footer {{ column_size }}">
                     {% if block.settings.footer_title != blank %}
-                    <h3 class="foot-title dropdow-mb">
+                    <div class="foot-title dropdow-mb">
                         {% render 'multilang' with block.settings.footer_title %}
-                    </h3>
+                    </div>
                     {% endif %}
                     
                     {%- assign footer_linklist = block.settings.footer_linklist -%}
@@ -66,11 +66,11 @@
                 {% elsif block.type == 'info_store' %}
                 <div class="col-footer {{ column_size }} {{ column_size_2 }}">
                     {% if block.settings.footer_logo != blank %}
-                    <h3 class="foot-title">
+                    <div class="foot-title">
                         <a href="/" class="logo-ft">
                             <img data-src="{{ block.settings.footer_logo | img_url:'master' }}" {% render 'lazyload' %}>            
                         </a>
-                    </h3>
+                    </div>
                     {% endif %}
 
                     <div class="location_info">

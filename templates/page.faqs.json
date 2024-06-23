@@ -23,7 +23,7 @@
           "type": "text",
           "settings": {
             "question_faqs_1": "Help! There's A Problem With My Shipment!",
-            "answer_faqs_1": "If there's an issue with your package, please <a href=\"https:\/\/sunsetfashionla.com\/pages\/contact-us\">contact<\/a> our Support Team. Please be sure to include your order and tracking numbers, a brief explanation of the problem, and any case or reference numbers you have started with the carrier.",
+            "answer_faqs_1": "If there's an issue with your package, please contact our Support Team. Please be sure to include your order and tracking numbers, a brief explanation of the problem, and any case or reference numbers you have started with the carrier.",
             "question_faqs_2": "Why Is My Shipment Status Not Updating?",
             "answer_faqs_2": "Your shipment may be delayed for many reasons. Common delays can be due to e.g. weather incidents, customs, or backlogs.",
             "question_faqs_3": "Customs Charges",
@@ -38,11 +38,11 @@
           "type": "text",
           "settings": {
             "question_faqs_1": "How Do I Order?",
-            "answer_faqs_1": "Browse through the products that you love, then click \"Add to cart\" and \"Check out\". Enter your shipping and billing details and wait for your order to arrive at your doorstep. It is that easy :)",
+            "answer_faqs_1": "Browse through the products that you love, then click 'Add to cart' and 'Check out'. Enter your shipping and billing details and wait for your order to arrive at your doorstep. It is that easy :)",
             "question_faqs_2": "Oh No! I Need To Modify My Order!",
             "answer_faqs_2": "Unfortunately, please note that we are only able to make changes to your order if it has not been fulfilled yet. If you want to change anything in your order, please contact us within 5 hours after placing your order. If the order has been shipped, we can no longer make modifications to your order.",
             "question_faqs_3": "What Is Your Refund Policy?",
-            "answer_faqs_3": "SunsetFashionLA has a 30 days refund policy for all orders placed through the website. You can have a look at our return policy <a href=\"https:\/\/sunsetfashionla.com\/pages\/refund-policy\">here<\/a>",
+            "answer_faqs_3": "SunsetFashionLA has a 30 days refund policy for all orders placed through the website. You can have a look at our return policy",
             "question_faqs_4": "What If I Received A Damaged Product?",
             "answer_faqs_4": "We always try to source the best quality products for our customers. However, there are many factors that might have resulted in your products being damaged in transit.\n\nIf you received a defective\/damaged item, please kindly contact us by sending an email to support@sunsetfashionla.com , let us know your problem, and please don't forget to attach photos\/videos which can clearly show the issue.",
             "question_faqs_5": "",

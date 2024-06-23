@@ -15,11 +15,11 @@
   <div class="{% if section.settings.layout == 'default' %}container{% else %}container-fluid{% endif %}">
     {% if section.settings.title != blank %}
     <div class="widget-title{% if section.settings.title_style == 'style_2' %} not-before{% endif %}">
-      <h3 class="box-title">
+      <div class="box-title">
         <h2 class="title">
           {% render 'multilang' with section.settings.title %}
         </h2>
-      </h3>
+      </div>
     </div>
     {% endif %}
 

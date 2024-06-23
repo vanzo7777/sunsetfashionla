@@ -1,0 +1,11 @@
+.layout_style_fullwidth .products-grid .grid-item .inner.product-item.sold-out .inner-top .product-top .product-image.image-swap a {
+    filter: contrast(0.4);
+}
+
+.product-skin-1 .product-shop .product-inventory .outofstock {
+    color: red;
+}
+
+.product-skin-1 .product-shop .product-inventory .instock {
+    color: green;
+}

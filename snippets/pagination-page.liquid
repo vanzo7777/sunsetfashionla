@@ -61,6 +61,13 @@
   {% endif %}
 
 {% else %}
+
+  <div class="infinite-scrolling">
+    <a class="btn" data-href="{{ paginate.next.url }}" tabindex>
+      {{ 'collections.general.show_more' | t}}
+    </a>
+  </div>
+
 <div class="toolbar-bottom">
   <p class="page-total">
     <span>{{ 'collections.toolbar.showing' | t }}</span>: 
@@ -127,3 +134,19 @@
   </ul>
 </div>
 {% endif %}
+
+<script>
+  let maxPaginationPages = {{ paginate.pages | json }};
+
+  let params = new URLSearchParams(document.location.search);
+	let urlParams = params.get("page"); 
+  
+  let currentUrl = new URL(window.location.href);
+  currentUrl.search = '';
+
+	if (+urlParams > +maxPaginationPages) {
+    window.history.replaceState({}, document.title, currentUrl.href);
+    window.location.reload();
+	}
+
+</script>

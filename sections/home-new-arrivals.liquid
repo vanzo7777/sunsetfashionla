@@ -16,11 +16,11 @@
     <div class="{% if section.settings.layout == 'default' %}container{% elsif section.settings.layout == 'padd_60' %}container-padd60{% else %}container-fluid{% endif %}">
         {% if section.settings.new_arrivals_title != blank %}
         <div class="widget-title{% if section.settings.title_style == 'style_2' %} not-before {% elsif section.settings.title_style == 'style_3' %} style_3{% endif %}">   
-            <h3 class="box-title">
+            <div class="box-title">
                 <span class="title"> 
                 {% render 'multilang' with section.settings.new_arrivals_title %}
                 </span>
-            </h3>
+            </div>
             {% if section.settings.title_style == 'style_3' %}
                 {% if section.settings.view_all != blank %}
                 <a class="view_all" href="{{ section.settings.link_view_all }}" title="{{section.settings.view_all}}">

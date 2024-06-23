@@ -182,7 +182,7 @@
         "enable_zoom_image": true,
         "enable_zoom_text": false,
         "enable_payment_button": true,
-        "enable_hot_stock": true,
+        "enable_hot_stock": false,
         "number_stock": "5",
         "show_sold_in": true,
         "item_prd": "3,5,6,7,8,10,12,15",
@@ -270,7 +270,7 @@
       "type": "apps",
       "blocks": {
         "alireviews-block-1695245156660": {
-          "type": "shopify:\/\/apps\/ali-reviews-product-reviews\/blocks\/widget-box\/bf2eea72-0400-4db1-8908-44b7418f9a88",
+          "type": "shopify:\/\/apps\/ali-reviews\/blocks\/widget-box\/bf2eea72-0400-4db1-8908-44b7418f9a88",
           "settings": {
             "product": "",
             "name": "Review Box 1",

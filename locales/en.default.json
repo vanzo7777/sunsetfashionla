@@ -436,7 +436,7 @@
       "new_label": "New",
       "sold_out": "Sold Out",
       "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
-      "unavailable": "Sold Out",
+      "unavailable": "Check out related products below",
       "compare_at": "Compare at",
       "quantity": "Quantity",
       "add_to_cart": "Add to cart",
@@ -545,7 +545,7 @@
     "products": {
       "product": {
         "regular_price": "Regular price",
-        "sold_out": "Sold out",
+        "sold_out": "Check out related products below",
         "unavailable": "Unavailable",
         "on_sale": "Sale",
         "quantity": "Quantity",

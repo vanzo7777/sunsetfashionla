@@ -11,9 +11,9 @@
   <div class="widget sidebar-links">
     {% if block.settings.title_categories != blank %}
     <div class="widget-title">
-      <h3 class="sidebar-title">
+      <div class="sidebar-title">
         {% render 'multilang' with block.settings.title_categories %}
-      </h3>
+      </div>
     </div>
     {% endif %}
 
@@ -62,14 +62,14 @@
   {% when 'list' %}
   <div class="js-filter widget sidebar-tags {% if style_color contains filter.label %}filter-color{% endif %} {% if style_size contains filter.label %}filter-size{% endif %}" data-index="{{ forloop.index }}">
     <div class="widget-title">
-      <h3 class="sidebar-title">
+      <div class="sidebar-title">
         <span>
           {{ filter.label | escape }}
           <span class="count-bubble">
             {%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}
           </span>
         </span>
-      </h3>
+      </div>
     </div>
     <div class="widget-content">
       <ul class="list-tags full">
@@ -168,9 +168,9 @@
                       %}
   <div class="js-filter widget sidebar-tags" data-index="{{ forloop.index }}">
     <div class="widget-title">
-      <h3 class="sidebar-title">
+      <div class="sidebar-title">
         <span>{{ filter.label | escape }}{%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}</span>
-      </h3>
+      </div>
     </div>
 
     <div class="widget-content">

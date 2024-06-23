@@ -38,20 +38,22 @@
       {% capture dateUpdate %}
         <time datetime='{{ article.updated_at | date: '%Y-%m-%d' }}'>{{ article.updated_at | date: '%b %d, %Y' }}</time>
       {% endcapture %}
+
       
-      {% capture author %}by {{ article.author }}{% endcapture %}
+      
+      {% capture author %}by {{ article.metafields.custom.article_author | default: article.author }}{% endcapture %}
       
       {% if section.settings.blog_show_author %}
       <span class="article__author">
-        <a href="/pages/{{article.author | handleize}}">{{ author }}</a>        
+        <a href="/pages/{{ article.metafields.custom.article_author | default: article.author | handleize}}">{{ author }}</a>        
       </span>
       {% endif %}
 
-      {% if section.settings.blog_show_date %}
+      <!-- {% if section.settings.blog_show_date %}
       <span class="article__date">
         on {{ date }}
       </span>
-      {% endif %}
+      {% endif %} -->
 
       <span class="article__date_update">
       |  Update at {{ dateUpdate }}
@@ -129,40 +131,40 @@
                       "@type": "Answer",
                       "text": "{{article.metafields.custom.question_text_1}}"
                     }
-                  }, 
+                  } 
                 {% endif %}
                 {% if article.metafields.custom.question_title_2 != blank %}
-                  {
+                ,{
                     "@type": "Question",
                     "name": "{{article.metafields.custom.question_title_2}}",
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "{{article.metafields.custom.question_text_2}}"
                     }
-                  }, 
+                  } 
                 {% endif %}
                 {% if article.metafields.custom.question_title_3 != blank %}
-                  {
+                ,{
                     "@type": "Question",
                     "name": "{{article.metafields.custom.question_title_3}}",
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "{{article.metafields.custom.question_text_3}}"
                     }
-                  }, 
+                  } 
                 {% endif %}
                 {% if article.metafields.custom.question_title_4 != blank %}
-                  {
+                ,{
                     "@type": "Question",
                     "name": "{{article.metafields.custom.question_title_4}}",
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "{{article.metafields.custom.question_text_4}}"
                     }
-                  }, 
+                  } 
                 {% endif %}
                 {% if article.metafields.custom.question_title_5 != blank %}
-                  {
+                  ,{
                     "@type": "Question",
                     "name": "{{article.metafields.custom.question_title_5}}",
                     "acceptedAnswer": {
@@ -171,7 +173,7 @@
                     }
                   }
                 {% endif %}
-              ]
+                ]
             }
             </script>
             
@@ -294,9 +296,9 @@
       #add-comment-title is used simply as an anchor link
       {% endcomment %}
       
-      <h3 class="title-comment" id="add-comment-title" {% if settings.enable_multilang %}data-translate="blogs.comments.title"{%endif%}>
+      <div class="title-comment" id="add-comment-title" {% if settings.enable_multilang %}data-translate="blogs.comments.title"{%endif%}>
         {{ 'blogs.comments.title' | t }}
-      </h3>
+      </div>
       
       {% render 'form-errors-custom' %}
       

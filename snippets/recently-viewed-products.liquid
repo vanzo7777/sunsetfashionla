@@ -82,7 +82,7 @@
           <div class="close-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>ic-close-circle</title><path d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm0 1C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm-.889-12L8 8.889 8.889 8 12 11.111 15.111 8l.889.889L12.889 12 16 15.111l-.889.889L12 12.889 8.889 16 8 15.111 11.111 12z"></path></svg>
           </div>
           <div class="title">
-            <h4 {% if settings.enable_multilang %}data-translate="cart.general.shopping_cart"{% endif %}>{{ 'cart.general.shopping_cart' | t }}</h4>
+            <div {% if settings.enable_multilang %}data-translate="cart.general.shopping_cart"{% endif %}>{{ 'cart.general.shopping_cart' | t }}</div>
             <div class="total">
               <span data-cart-count>{{ cart.item_count }}</span> 
               <span {% if settings.enable_multilang %}data-translate="customer.order.product"{% endif %}>{{ 'customer.order.product' | t }}</span>

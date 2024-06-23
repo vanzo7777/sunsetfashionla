@@ -19,9 +19,9 @@
       </span>
     </a>
     
-    <h5 {% if settings.enable_multilang %}data-translate="cart.general.shopping_cart"{% endif %}>
+    <div {% if settings.enable_multilang %}data-translate="cart.general.shopping_cart"{% endif %}>
       {{ 'cart.general.your_bag' | t }}
-    </h5>
+    </div>
     <div class="wrapper-cartCount" {% if cart.item_count == 0 %}style="display: none;"{% endif %}>
       <span class="cartCount" data-cart-count="">{{ cart.item_count }}</span>
       <span>{{ 'layout.cart.items_count.other' | t }}</span>
@@ -162,7 +162,7 @@
     {% unless settings.header_layout == 'default' %}
     {% if settings.display_sidebar_product_cart %}
     <div class="cart-sidebar-products">
-      <h3>{{ settings.title_sidebar_cart }}</h3>
+      <div>{{ settings.title_sidebar_cart }}</div>
       {% assign collection = collections[settings.cart_sidebar_products] %}
       <div class="before-you-leave__content--product">
           <div class="products-grid" data-product-cart-slider>

@@ -43,9 +43,9 @@
           <div class="widget sidebar-links" data-has-collapse>
               {% if block.settings.title_categories != blank %}
               <div class="widget-title">
-                  <h3 class="sidebar-title">
+                  <div class="sidebar-title">
                       {% render 'multilang' with block.settings.title_categories %}
-                  </h3>
+                  </div>
               </div>
               {% endif %}
 
@@ -121,9 +121,9 @@
           <div class="widget sidebar-widget-product" data-sidebar-product>
               {% if block.settings.title_product != blank %}
               <div class="widget-title">   
-                  <h3 class="sidebar-title">
+                  <div class="sidebar-title">
                       {% render 'multilang' with block.settings.title_product %}
-                  </h3>
+                  </div>
               </div>
               {% endif %}
 

@@ -25,7 +25,7 @@
   </style>
   <!-- Title and description ================================================== -->
    {% unless template contains 'search' %}
-  <title {{ current_page }}>
+  <title>
       
      {% if template.name contains "product" %} {{ product.selected_or_first_available_variant.title }} - {% endif %}  {{ page_title }}
 
@@ -34,7 +34,7 @@
     "{{ current_tags | join: ', ' }}"
     {% endif %}
     {% if current_page != 1 %} &ndash; {{'general.title.page' | t}} 
-    {{ current_page }}
+    {{ current_page }}.
     {% endif %}
 
     {% unless page_title contains shop.name %} &ndash; 
@@ -46,7 +46,12 @@
    {{'general.title.search' | t}} {{search.results_count}} {{'general.title.search_results' | t}} "{{search.terms}}"  &ndash; {{ shop.name }} 
   </title>
   {% endunless %}
+
+
+
   
+
+
 {% if canonical_url contains  'pages/faqs' %}
   
   <meta name="description" content="Answers for frequently asked questions about products and women's clothing online shop SunsetFashionLA">
@@ -60,20 +65,25 @@
   <meta name="description" content="Contact information and feedback form of SunsetFashionLA online clothing store. Contact us is you have any question or proposition">
  
   {% elsif page_description %}
-  <meta name="description" hf content="{% if template.name contains "product" %} {{ product.selected_or_first_available_variant.title }} - {{ page_title }} - {% endif %} {{ page_description | escape | split: '[/countdown]' | last | strip_html }}">
+  <meta name="description" hf content="{% if template.name contains product %} {{ product.selected_or_first_available_variant.title }} - {{ page_title }} - {% endif %} {{ page_description | escape | split: '[/countdown]' | last | strip_html }} {%- if current_page != 1 %} Page - {{ current_page }}{% endif -%}">
 
   {% elsif collection.template_suffix == 'meta-description' %}
 
    <meta name="description" content="Affordable collection of {{ page_title }}. Order products now!">
      
-  {% elsif template contains 'collection'   %}
+  {% elsif template contains 'collection' %}
 
-   <meta name="description" content="{% if current_page != 1 %} Page {{ current_page }} -  {% endif %}  {{ collection.description | escape | split: '[/countdown]' | last | strip_html }}">>
+   <meta name="description" content="{{ collection.description | escape | split: '[/countdown]' | last | strip_html }}">
 
-  {% elsif template.name contains "product" %}
+  {% elsif template contains 'product' %}
 
    <meta name="description" hf content="{{ product.selected_or_first_available_variant.title }} - {{ page_title }} - {{ page_description | escape | split: '[/countdown]' | last | strip_html }}">
  
+  {% endif %}
+
+
+  {% if template contains 'product' or template contains 'collection' or canonical_url contains 'pages' or  canonical_url contains 'blogs'  %}
+    <meta name="robots" content="index, follow">
   {% endif %}
 
   <!-- Product meta ================================================== -->
@@ -120,6 +130,7 @@
 
   <!-- Header hook for plugins ================================ -->
  
+  <script type="lazyload2" data-src="{{ 'api_custom.js' | asset_url}}"></script>
 
 
   <!--[if lt IE 9]>
@@ -142,6 +153,7 @@
     {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
   {% endif %}
 
+  
   {% render 'linked-options' %}
   {% if template contains 'product' %}
   <script nomodule type="lazyload2" data-src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js" defer></script>
@@ -151,6 +163,16 @@
   <meta name="google-site-verification" content="vjJtRRiKWoR8Ai-MS4sr-Sc3ICtxUg1bd5Y0wfw0Wrw" />
 
 {{ 'devas.css' | asset_url | stylesheet_tag }}
+
+
+{% if template contains 'collection' or template contains 'product' %} 
+  {{ 'api_css.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<script type="text/javascript"> 
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })
+    (window, document, "clarity", "script", "mtf1reaj64"); 
+</script>
   
  </head>
 

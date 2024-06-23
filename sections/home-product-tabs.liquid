@@ -18,11 +18,11 @@
     <div class="container">
         {% if section.settings.product_tabs_title != blank %}
         <div class="widget-title{% if section.settings.title_style == 'style_2' %} not-before{% endif %}">   
-            <h3 class="box-title">
+            <h2 class="box-title">
                 <span class="title"> 
                 {% render 'multilang' with section.settings.product_tabs_title %}
                 </span>
-            </h3>
+            </h2>
             {% if section.settings.product_tabs_des != blank %}
             <p>
                 {% render 'multilang' with section.settings.product_tabs_des %}

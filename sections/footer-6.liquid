@@ -50,9 +50,9 @@
                 {% if block.type == 'footer_link' %}
                 <div class="col-footer {{ column_size }}">
                     {% if block.settings.footer_title != blank %}
-                    <h3 class="foot-title dropdow-mb">
+                    <div class="foot-title dropdow-mb">
                         {% render 'multilang' with block.settings.footer_title %}
-                    </h3>
+                    </div>
                     {% endif %}
                     
                     {%- assign footer_linklist = block.settings.footer_linklist -%}
@@ -74,17 +74,17 @@
                 <div class="col-footer {{ column_size }} {{ column_size_2 }}">
                     {% if block.settings.footer_social_enable %}
                         <div class="social-media">
-                            <h3 class="foot-title">
+                            <div class="foot-title">
                                 {{ block.settings.footer_social_title }}
-                            </h3>
+                            </div>
                             {% render 'social-media' %}
                         </div>
                     {% endif %}
                     {% if block.settings.show_payment_icons %}
                     <div class="wrapper-payment-methods">
-                        <h3 class="foot-title">
+                        <div class="foot-title">
                             {{ block.settings.footer_payment_title }}
-                        </h3>
+                        </div>
                         {% assign payment_string = 'visa,visa_electron,master,maestro,american_express,solo,amazon_payments,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,paypal,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,stripe,sage,wallet,western' %}
                         {% assign methods = payment_string | split: ',' %}
                         <ul class="payment-methods">    

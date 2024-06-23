@@ -43,10 +43,14 @@
   }
 </style>
 
+
 <script>
-	if (window.location.href.includes('?page=1')) {
+	
+	let params = new URLSearchParams(document.location.search);
+	let urlParams = params.get("page"); 
+	if (urlParams == 1) {
 		const link = document.querySelector('link[rel="canonical"]').getAttribute('href')
-		window.location.href = link
+		window.location.href = link;
 	}
 </script>
 

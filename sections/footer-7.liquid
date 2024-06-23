@@ -10,9 +10,9 @@
                         <div class="newsleter-col-inner">
                             <div class="footer-newsletter">
                                 {% if section.settings.footer_newsletter_title != blank %}
-                                <h3 class="foot-title">
+                                <div class="foot-title">
                                     {% render 'multilang' with section.settings.footer_newsletter_title %}
-                                </h3>
+                                </div>
                                 {% endif %}
                                 {%if section.settings.layout_style == 'layout_style_2' %}
                                     <div class="newsletter-des">
@@ -34,9 +34,9 @@
                             {% if section.settings.footer_social_enable %}
                             <div class="footer-social">
                                 {% if section.settings.footer_social_title != blank %}
-                                <h3 class="foot-title">
+                                <div class="foot-title">
                                     {% render 'multilang' with section.settings.footer_social_title %}
-                                </h3>
+                                </div>
                                 {% endif %}
                                 <div class="groups-block">
                                     {% render 'social-media' %}
@@ -48,9 +48,9 @@
                      {% if section.settings.footer_location_enable %}
                         <div class="location_info">
                             {% if section.settings.footer_location_title != blank %}
-                                <h3 class="foot-title dropdow-mb">
+                                <div class="foot-title dropdow-mb">
                                     {% render 'multilang' with section.settings.footer_location_title %}
-                                </h3>
+                                </div>
                             {% endif %}
                             <ul>
                             {% if section.settings.info_text_1 != blank %}
@@ -115,9 +115,9 @@
                         {% for block in section.blocks %}
                         <div class="col-footer {{ column_size }}">
                             {% if block.settings.footer_title != blank %}
-                            <h3 class="foot-title dropdow-mb">
+                            <div class="foot-title dropdow-mb">
                                 {% render 'multilang' with block.settings.footer_title %}
-                            </h3>
+                            </div>
                             {% endif %}
                             
                             {%- assign footer_linklist = block.settings.footer_linklist -%}

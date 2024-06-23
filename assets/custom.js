@@ -13,3 +13,7 @@ $(document).on('click', '.faq_articles__title', function() {
     $(this).toggleClass('open')
     $(this).next().slideToggle('fast')
 })
+
+
+
+
