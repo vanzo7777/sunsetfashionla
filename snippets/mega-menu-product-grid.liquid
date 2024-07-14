@@ -44,7 +44,7 @@
   <div class="inner-top">
   	<div class="product-top">
       <div class="product-image">
-        <a href="{{ product.url | within: collection }}" class="product-grid-image" data-collections-related="{{ routes.collections_url }}/{{collection.handle}}?view=related">
+        <a href="{{ product.url }}" class="product-grid-image" data-collections-related="{{ routes.collections_url }}/{{collection.handle}}?view=related">
           <img data-srcset="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" {% render 'lazyload' %}>
         </a>
       </div>
@@ -94,7 +94,7 @@
         {% endif %}
       {% endif %}
       
-      <a class="product-title {% if settings.header_layout == '02'%}{% if settings.product_variant_name %}{% if select != blank %}change-text{% endif %}{% endif %}{% endif %}" href="{{ product.url | within: collection }}">
+      <a class="product-title {% if settings.header_layout == '02'%}{% if settings.product_variant_name %}{% if select != blank %}change-text{% endif %}{% endif %}{% endif %}" href="{{ product.url }}">
         {% render 'multilang' with product.title %}
         {% if settings.header_layout == '02'%}
           {% if settings.product_variant_name %}

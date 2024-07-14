@@ -46,8 +46,8 @@
 
 <script>
 	
-	let params = new URLSearchParams(document.location.search);
-	let urlParams = params.get("page"); 
+	let paramsUrlSet = new URLSearchParams(document.location.search);
+	let urlParams = paramsUrlSet.get("page"); 
 	if (urlParams == 1) {
 		const link = document.querySelector('link[rel="canonical"]').getAttribute('href')
 		window.location.href = link;

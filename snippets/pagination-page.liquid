@@ -83,8 +83,21 @@
 
   <ul class="pagination-page">
     {% if paginate.previous %}
+
+    {%- capture previous_link_url -%}
+    {%- if paginate.current_page == 2 -%}
+      {%- if template contains "search" -%}
+      {{ paginate.previous.url | replace: 'page=1', '' | replace: '?&', '?' | replace: '&&', '&' }}
+      {%- else -%}
+      {{ paginate.previous.url | replace: '?page=1', '' }}
+      {%- endif -%}
+    {%- else -%}
+      {{ paginate.previous.url }}
+    {%- endif -%}
+    {%- endcapture -%}
+
     <li class="text">
-      <a href="{{ paginate.previous.url }}" title="{{ 'collections.toolbar.previous' | t }}" {% if settings.enable_multilang %}data-translate="collections.toolbar.previous" translate-item="title"{% endif %}>
+      <a href="{{ previous_link_url }}" title="{{ 'collections.toolbar.previous' | t }}" {% if settings.enable_multilang %}data-translate="collections.toolbar.previous" translate-item="title"{% endif %}>
         <i class="fa fa-angle-left" aria-hidden="true"></i>
         <span {% if settings.enable_multilang %}data-translate="collections.toolbar.previous"{% endif %}>
           {{ 'collections.toolbar.previous' | t }}
@@ -100,10 +113,23 @@
     </li>
     {% endif %}
 
-    {% for part in paginate.parts %}
+    {% for part in paginate.parts %} 
       {% if part.is_link %}
+
+      {%- capture part_link_url -%}
+      {%- if part.title == 1 -%}
+        {%- if template contains "search" -%}
+        {{ part.url | replace: 'page=1', '' | replace: '?&', '?' | replace: '&&', '&' }}
+        {%- else -%}
+        {{ part.url | replace: '?page=1', '' }}
+        {%- endif -%}
+      {%- else -%}
+      {{ part.url }}
+      {%- endif -%}
+      {%- endcapture -%}
+
       <li>
-        <a href="{{ part.url }}">{{ part.title }}</a>
+        <a href="{{ part_link_url }}">{{ part.title }}</a>
       </li>
       {% else %}
         {% if part.title == paginate.current_page %}
@@ -138,14 +164,14 @@
 <script>
   let maxPaginationPages = {{ paginate.pages | json }};
 
-  let params = new URLSearchParams(document.location.search);
-	let urlParams = params.get("page"); 
+  let paramsUrl_pagin = new URLSearchParams(document.location.search);
+  let urlParams_pagin = paramsUrl_pagin.get("page"); 
   
-  let currentUrl = new URL(window.location.href);
-  currentUrl.search = '';
+  let currentUrl_pagin = new URL(window.location.href);
+  currentUrl_pagin.search = '';
 
-	if (+urlParams > +maxPaginationPages) {
-    window.history.replaceState({}, document.title, currentUrl.href);
+	if (+urlParams_pagin > +maxPaginationPages) {
+    window.history.replaceState({}, document.title, currentUrl_pagin.href);
     window.location.reload();
 	}
 

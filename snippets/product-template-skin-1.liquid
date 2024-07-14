@@ -141,7 +141,15 @@
                   
                   <div class="group-title {% if collection %}has-next_prev{% endif %}">
                     <h1 class="product-title">
-                   {{  product.selected_or_first_available_variant.title  }} - {{ product.title }}
+                      
+                      {% for option in product.options_with_values %}
+                          {% assign name = option.name | downcase %}
+                          {% if name == 'color' %}
+                            {% assign color_name = option.values[0] %}
+                          {% endif %}
+                      {% endfor %}
+                      
+                      {% if color_name != blank %} {{  color_name  }} - {% endif %} {{ product.title }}
                       {% comment %}
                       {% assign title = product.selected_or_first_available_variant.option1 | concat : " - "  %}
                       {{ title }}

@@ -27,9 +27,16 @@
    {% unless template contains 'search' %}
   <title>
       
-     {% if template.name contains "product" %} {{ product.selected_or_first_available_variant.title }} - {% endif %}  {{ page_title }}
+     {% if template.name contains "product" %} 
+      {% for option in product.options_with_values %}
+          {% assign name = option.name | downcase %}
+          {% if name == 'color' %}
+            {% assign color_name = option.values[0] %}
+          {% endif %}
+      {% endfor %}
+      {% if color_name != blank %} {{  color_name  }} - {% endif %}
+     {% endif %}  {{ page_title }}
 
-    
     {% if current_tags %} &ndash; {{'general.title.tagged' | t}} 
     "{{ current_tags | join: ', ' }}"
     {% endif %}
@@ -76,7 +83,7 @@
    <meta name="description" content="{{ collection.description | escape | split: '[/countdown]' | last | strip_html }}">
 
   {% elsif template contains 'product' %}
-
+  
    <meta name="description" hf content="{{ product.selected_or_first_available_variant.title }} - {{ page_title }} - {{ page_description | escape | split: '[/countdown]' | last | strip_html }}">
  
   {% endif %}
